@@ -1,0 +1,12 @@
+**/node_modules
+**/build
+**/config
+**/public
+**/README.md
+**/package-lock.json
+**/package.json
+**/scripts
+**/yarn.lock
+**/src/css
+**/src/fonts
+**/src/img
