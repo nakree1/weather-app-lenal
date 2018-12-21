@@ -1,6 +1,7 @@
 {
   "name": "weather_app_lenal",
   "version": "0.1.0",
+  "proxy": "https://www.metaweather.com",
   "private": true,
   "dependencies": {
     "@babel/core": "7.1.0",
