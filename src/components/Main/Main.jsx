@@ -1,5 +1,5 @@
 import React from 'react';
-import Forecast from '../Forecast/Forecast';
+import ForecastContainer from '../Forecast/ForecastContainer';
 import LocationContainer from '../Location/LocationContainer';
 
 export default class Main extends React.Component {
@@ -7,14 +7,14 @@ export default class Main extends React.Component {
     return (
       <div className="content">
         <div className="main-form">
-          <LocationContainer/>
+          <LocationContainer />
         </div>
-        <Forecast/>
+        <ForecastContainer />
         {/*<div className="notes">*/}
-          {/*<div className="notes__sidebar"></div>*/}
-          {/*<div className="notes__content"></div>*/}
+        {/*<div className="notes__sidebar"></div>*/}
+        {/*<div className="notes__content"></div>*/}
         {/*</div>*/}
       </div>
-    )
+    );
   }
 }

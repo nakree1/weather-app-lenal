@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
-import { fetchSearchHints } from './LocationActions';
+import { fetchSearchHints, selectLocation } from './LocationActions';
 import Location from './Location';
 
 const mapStateToProps = (state, props) => ({
-  status: state.search.status,
-  hints: state.search.hints,
+  status: state.location.search.status,
+  query: state.location.search.query,
+  hints: state.location.search.hints,
+  currentLocation: state.location.currentLocation,
 });
 
 const clearHints = fetchSearchHints.fulfill;
 
-export default connect(mapStateToProps, {
-  fetchSearchHints,
-  clearHints
-})(Location);
-
+export default connect(
+  mapStateToProps,
+  {
+    fetchSearchHints,
+    clearHints,
+    selectLocation,
+  }
+)(Location);

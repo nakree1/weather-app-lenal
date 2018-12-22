@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import search from './_reducers/LocationSearchReducer'
-
+import location from './_reducers/LocationSearchReducer';
+import forecast from './_reducers/ForecastReducer';
 
 const rootReducer = combineReducers({
-  search
+  location,
+  forecast,
 });
 
-export default rootReducer
+export default rootReducer;

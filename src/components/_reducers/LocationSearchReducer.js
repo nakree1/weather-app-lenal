@@ -3,38 +3,72 @@ import { handleActions } from 'redux-actions';
 
 import * as actions from '../Location/LocationActions';
 
-const status = handleActions({
-  [actions.fetchSearchHints.REQUEST]() {
-    return 'request';
+const status = handleActions(
+  {
+    [actions.fetchSearchHints.REQUEST]() {
+      return 'request';
+    },
+    [actions.fetchSearchHints.SUCCESS]() {
+      return 'success';
+    },
+    [actions.fetchSearchHints.FAILURE]() {
+      return 'failure';
+    },
+    [actions.fetchSearchHints.FULFILL]() {
+      return 'none';
+    },
   },
-  [actions.fetchSearchHints.SUCCESS]() {
-    return 'success'
-  },
-  [actions.fetchSearchHints.FAILURE]() {
-    return 'failure';
-  },
-  [actions.fetchSearchHints.FULFILL]() {
-    return 'none';
-  },
-}, 'none');
+  'none'
+);
 
-const hints = handleActions({
-  [actions.fetchSearchHints.TRIGGER]() {
-    return [];
+const hints = handleActions(
+  {
+    [actions.fetchSearchHints.TRIGGER]() {
+      return [];
+    },
+    [actions.fetchSearchHints.SUCCESS](state, { payload }) {
+      return payload;
+    },
+    [actions.fetchSearchHints.FULFILL]() {
+      return [];
+    },
   },
-  [actions.fetchSearchHints.SUCCESS](state, {payload}) {
-    return payload;
+  []
+);
+
+const query = handleActions(
+  {
+    [actions.fetchSearchHints.TRIGGER](state, { payload }) {
+      return payload;
+    },
+    [actions.selectLocation.TRIGGER](state, { payload }) {
+      return payload.title;
+    },
   },
-  [actions.fetchSearchHints.FULFILL]() {
-    return [];
+  ''
+);
+
+const currentLocation = handleActions(
+  {
+    [actions.selectLocation.TRIGGER](state, { payload }) {
+      return {
+        id: payload.id,
+        title: payload.title,
+      };
+    },
   },
-}, []);
+  { id: '', title: '' }
+);
 
 const search = combineReducers({
   status,
-  hints
+  hints,
+  query,
 });
 
-export default search;
+const location = combineReducers({
+  search,
+  currentLocation,
+});
 
-
+export default location;
