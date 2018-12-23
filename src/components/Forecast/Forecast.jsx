@@ -19,7 +19,7 @@ export default class Forecast extends React.Component {
     return (
       <div className="forecast">
         <div className="forecast__week">{weekForecast}</div>
-        <div className="forecast__details">{currentDate}</div>
+        {/*<div className="forecast__details">{currentDate}</div>*/}
       </div>
     );
   }

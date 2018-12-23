@@ -15,6 +15,7 @@ export default class AddNoteButton extends React.Component {
         date: this.props.currentDate,
         title: value,
       });
+      this.input.current.value = '';
     }
   };
 
