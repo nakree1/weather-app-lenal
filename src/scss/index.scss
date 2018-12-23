@@ -125,4 +125,59 @@ body {
   background-color: #8a8da9;
 }
 
+.notes {
+  background-color: #20c997;
+  display: flex;
+  height: 30vh;
+
+
+  &__sidebar {
+    background-color: #dc3545;
+    width: 30%;
+  }
+
+  &__content {
+    background-color: #28a745;
+    width: 70%;
+  }
+
+  &__item {
+    background-color: #e83e8c;
+    cursor: pointer;
+
+    &:hover {
+      background-color: cyan;
+    }
+
+    &-container {
+      display:flex;
+      flex-direction: column;
+    }
+
+    &-button {
+      background-color: #007bff;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #5fb0ff;
+      }
+    }
+
+    &-item {
+
+    }
+  }
+
+  &__text {
+    box-sizing: border-box;
+
+    height: 100%;
+    width: 100%;
+    font-size: 1.25rem;
+    resize: none;
+    outline: none;
+  }
+}
+
 @import "_media.scss";

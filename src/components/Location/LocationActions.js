@@ -4,6 +4,7 @@ import { delay } from 'redux-saga';
 import api from '../../config/api';
 
 export const fetchSearchHints = createRoutine('SEARCH_HINTS_FETCH');
+export const fetchCurrentLocation = createRoutine('CURRENT_LOCATION_FETCH');
 export const selectLocation = createRoutine('LOCATION_SELECT');
 
 function* searchHintsWorker({ payload }) {
@@ -22,6 +23,30 @@ function* searchHintsWorker({ payload }) {
   }
 }
 
+function* currentLocationWorker({ payload }) {
+  yield put(fetchCurrentLocation.request());
+  try {
+    const res = yield call(() => api.getLocationByCoords(payload));
+    const city = res.data[0];
+    if (res.status === 200 && city) {
+      yield put(
+        fetchCurrentLocation.success({
+          id: city.woeid,
+          title: city.title,
+        })
+      );
+    } else {
+      yield put(fetchCurrentLocation.failure());
+    }
+  } catch (e) {
+    yield put(fetchSearchHints.failure());
+    console.error(e);
+  }
+}
+
 export function* locationSearchWatcher() {
-  yield all([takeLatest(fetchSearchHints.TRIGGER, searchHintsWorker)]);
+  yield all([
+    takeLatest(fetchSearchHints.TRIGGER, searchHintsWorker),
+    takeLatest(fetchCurrentLocation.TRIGGER, currentLocationWorker),
+  ]);
 }

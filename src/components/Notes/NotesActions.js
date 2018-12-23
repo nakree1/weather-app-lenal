@@ -1,7 +1,7 @@
 import { createRoutine } from 'redux-saga-routines';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import api from '../../config/api';
-import { selectLocation, fetchCurrentLocation } from '../Location/LocationActions';
+import { selectLocation } from '../Location/LocationActions';
 
 export const fetchForecast = createRoutine('FORECAST_FETCH');
 
@@ -22,8 +22,5 @@ function* getForecastWorker({ payload }) {
 }
 
 export function* forecastWatcher() {
-  yield all([
-    takeLatest(selectLocation.TRIGGER, getForecastWorker),
-    takeLatest(fetchCurrentLocation.SUCCESS, getForecastWorker),
-  ]);
+  yield all([takeLatest(selectLocation.TRIGGER, getForecastWorker)]);
 }

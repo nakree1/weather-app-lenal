@@ -44,6 +44,9 @@ const query = handleActions(
     [actions.selectLocation.TRIGGER](state, { payload }) {
       return payload.title;
     },
+    [actions.fetchCurrentLocation.SUCCESS](state, { payload }) {
+      return payload.title;
+    },
   },
   ''
 );
@@ -51,6 +54,12 @@ const query = handleActions(
 const currentLocation = handleActions(
   {
     [actions.selectLocation.TRIGGER](state, { payload }) {
+      return {
+        id: payload.id,
+        title: payload.title,
+      };
+    },
+    [actions.fetchCurrentLocation.SUCCESS](state, { payload }) {
       return {
         id: payload.id,
         title: payload.title,

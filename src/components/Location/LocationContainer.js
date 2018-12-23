@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSearchHints, selectLocation } from './LocationActions';
+import { fetchSearchHints, fetchCurrentLocation, selectLocation } from './LocationActions';
 import Location from './Location';
 
 const mapStateToProps = (state, props) => ({
@@ -15,6 +15,7 @@ export default connect(
   mapStateToProps,
   {
     fetchSearchHints,
+    fetchCurrentLocation,
     clearHints,
     selectLocation,
   }
