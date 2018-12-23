@@ -1,16 +1,20 @@
 import { createRoutine } from 'redux-saga-routines';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import api from '../../config/api';
-import { selectLocation } from '../Location/LocationActions';
+import { selectLocation, fetchCurrentLocation } from './LocationActions';
+import { selectCurrentDate } from './CurrentDateActions';
 
 export const fetchForecast = createRoutine('FORECAST_FETCH');
 
 function* getForecastWorker({ payload }) {
-  yield put(fetchForecast.request());
+  yield put(fetchForecast.fulfill());
+  yield put(selectCurrentDate.trigger());
   try {
     const res = yield call(() => api.getForecastByCityId(payload.id));
     if (res.status === 200) {
-      yield put(fetchForecast.success(res.data.consolidated_weather));
+      const weather = res.data.consolidated_weather;
+      yield put(fetchForecast.success(weather));
+      yield put(selectCurrentDate.trigger(weather[0].applicable_date));
     } else {
       console.error(res);
       yield put(fetchForecast.failure());
@@ -22,5 +26,8 @@ function* getForecastWorker({ payload }) {
 }
 
 export function* forecastWatcher() {
-  yield all([takeLatest(selectLocation.TRIGGER, getForecastWorker)]);
+  yield all([
+    takeLatest(selectLocation.TRIGGER, getForecastWorker),
+    takeLatest(fetchCurrentLocation.SUCCESS, getForecastWorker),
+  ]);
 }

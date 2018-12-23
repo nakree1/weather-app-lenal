@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 
-import * as actions from '../Location/LocationActions';
+import * as actions from '../_actions/LocationActions';
 
 const status = handleActions(
   {

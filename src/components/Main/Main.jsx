@@ -1,7 +1,7 @@
 import React from 'react';
 import ForecastContainer from '../Forecast/ForecastContainer';
 import LocationContainer from '../Location/LocationContainer';
-import Notes from '../Notes/Notes';
+import NotesContainer from '../Notes/NotesContainer';
 
 export default class Main extends React.Component {
   render() {
@@ -12,7 +12,7 @@ export default class Main extends React.Component {
         </div>
         <ForecastContainer />
 
-        <Notes />
+        <NotesContainer />
       </div>
     );
   }

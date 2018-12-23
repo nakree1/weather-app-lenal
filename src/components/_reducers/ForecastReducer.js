@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 
-import * as actions from '../Forecast/ForecastActions';
+import * as actions from '../_actions/ForecastActions';
 
 const weekStatus = handleActions(
   {

@@ -1,6 +1,5 @@
 import React from 'react';
 import getGeolocation from '../../utils/getGeolocation';
-import api from '../../config/api';
 
 export default class Location extends React.Component {
   state = {
@@ -23,8 +22,6 @@ export default class Location extends React.Component {
   componentWillUnmount() {
     document.removeEventListener('click', this.closeDropdown);
   }
-
-  getLocationByCoords = coords => {};
 
   openDropdown = () => {
     if (!this.state.showDropdown) {

@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
-import Forecast from './Forecast';
+import Notes from './Notes';
+import { createNote } from '../_actions/NotesActions';
 
 const mapStateToProps = state => ({
-  data: state.forecast.week.data,
-  status: state.forecast.week.status,
+  isLoaded: state.currentDate !== '',
+  data: state.notes.data[state.currentDate] || [],
+  currentDate: state.currentDate,
 });
 
 export default connect(
   mapStateToProps,
-  {}
-)(Forecast);
+  { createNote }
+)(Notes);

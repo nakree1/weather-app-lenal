@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchSearchHints, fetchCurrentLocation, selectLocation } from './LocationActions';
+import { fetchSearchHints, fetchCurrentLocation, selectLocation } from '../_actions/LocationActions';
+import { selectCurrentDate } from '../_actions/CurrentDateActions';
 import Location from './Location';
 
 const mapStateToProps = (state, props) => ({
@@ -18,5 +19,6 @@ export default connect(
     fetchCurrentLocation,
     clearHints,
     selectLocation,
+    selectCurrentDate,
   }
 )(Location);

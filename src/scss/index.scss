@@ -120,9 +120,26 @@ body {
   flex-shrink: revert;
 }
 
+.active {
+  .forecast__item {
+    background-color: #ffc107;
+  }
+}
+
 .forecast__item {
   width: 100%;
   background-color: #8a8da9;
+  cursor: pointer;
+
+  &-container {
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 2px solid #fd7e14;
+    }
+
+  }
+
 }
 
 .notes {
