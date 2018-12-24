@@ -4,7 +4,9 @@ export default function Wrapper({ children }) {
   return (
     <Fragment>
       <header className="header">Weather App</header>
-      <section className="container">{children}</section>
+      <section className="container">
+        <div className="content">{children}</div>
+      </section>
     </Fragment>
   );
 }

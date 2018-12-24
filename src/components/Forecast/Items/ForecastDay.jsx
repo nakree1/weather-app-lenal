@@ -37,9 +37,6 @@ export default class ForecastDay extends React.Component {
           </div>
           <span className="forecast__content">{wind_speed.toFixed(1)} mph</span>
         </div>
-        {/*<div className="forecast__item forecast__item_temp">{max_temp.toFixed()} C</div>*/}
-        {/*<div className="forecast__item forecast__item_humidity">{humidity}</div>*/}
-        {/*<div className="forecast__item forecast__item_wind">2 m/s</div>*/}
       </div>
     );
   }

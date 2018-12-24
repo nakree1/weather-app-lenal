@@ -1,5 +1,6 @@
 import React from 'react';
 import getGeolocation from '../../utils/getGeolocation';
+import { PreloaderImg } from '../_common/Preloader';
 
 export default class Location extends React.Component {
   state = {
@@ -66,7 +67,7 @@ export default class Location extends React.Component {
 
   render() {
     const { showDropdown } = this.state;
-    const { hints, query } = this.props;
+    const { hints, query, status } = this.props;
 
     const list = hints.map(hint => (
       <li className="dropdown__item" key={hint.woeid} data-title={hint.title} data-id={hint.woeid}>
@@ -76,7 +77,6 @@ export default class Location extends React.Component {
 
     return (
       <div className="location">
-        {/*<div className="location__label">Location:</div>*/}
         <div className="dropdown">
           <input
             type="text"
@@ -87,6 +87,12 @@ export default class Location extends React.Component {
             value={query}
             placeholder="Start typing..."
           />
+
+          {status === 'request' ? (
+            <div className="dropdown-preloader">
+              <PreloaderImg height={25} />
+            </div>
+          ) : null}
 
           <ul className={`dropdown__list ${hints.length && showDropdown ? 'active' : ''}`}>{hints.length && list}</ul>
         </div>

@@ -3,8 +3,8 @@ import Forecast from './Forecast';
 import { selectCurrentDate } from '../_actions/CurrentDateActions';
 
 const mapStateToProps = state => ({
-  data: state.forecast.week.data,
-  status: state.forecast.week.status,
+  data: state.forecast.data,
+  status: state.forecast.status,
   currentDate: state.currentDate,
 });
 

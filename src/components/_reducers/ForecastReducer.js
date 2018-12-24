@@ -30,13 +30,9 @@ const weekData = handleActions(
   []
 );
 
-const week = combineReducers({
+const forecast = combineReducers({
   status: weekStatus,
   data: weekData,
-});
-
-const forecast = combineReducers({
-  week,
 });
 
 export default forecast;

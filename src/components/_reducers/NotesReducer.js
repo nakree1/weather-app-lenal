@@ -6,8 +6,6 @@ import { selectCurrentDate } from '../_actions/CurrentDateActions';
 
 import getId from '../../utils/getId';
 
-const isLoaded = handleActions({}, true);
-
 const selected = handleActions(
   {
     [actions.selectNote.TRIGGER](state, { payload }) {
@@ -72,7 +70,6 @@ const data = handleActions(
 );
 
 const notes = combineReducers({
-  isLoaded,
   selected,
   data,
 });

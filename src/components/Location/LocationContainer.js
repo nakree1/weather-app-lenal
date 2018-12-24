@@ -3,7 +3,7 @@ import { fetchSearchHints, fetchCurrentLocation, selectLocation } from '../_acti
 import { selectCurrentDate } from '../_actions/CurrentDateActions';
 import Location from './Location';
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = state => ({
   status: state.location.search.status,
   query: state.location.search.query,
   hints: state.location.search.hints,

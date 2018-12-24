@@ -1,13 +1,17 @@
 import React from 'react';
-import '../scss/index.scss';
-import Main from './Main/Main';
+import ForecastContainer from './Forecast/ForecastContainer';
+import LocationContainer from './Location/LocationContainer';
+import NotesContainer from './Notes/NotesContainer';
 import Wrapper from './Wrapper/Wrapper';
+import '../scss/index.scss';
 
 class App extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Main />
+        <LocationContainer />
+        <ForecastContainer />
+        <NotesContainer />
       </Wrapper>
     );
   }

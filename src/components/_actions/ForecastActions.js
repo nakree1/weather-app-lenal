@@ -7,7 +7,7 @@ import { selectCurrentDate } from './CurrentDateActions';
 export const fetchForecast = createRoutine('FORECAST_FETCH');
 
 function* getForecastWorker({ payload }) {
-  yield put(fetchForecast.fulfill());
+  yield put(fetchForecast.request());
   yield put(selectCurrentDate.trigger());
   try {
     const res = yield call(() => api.getForecastByCityId(payload.id));

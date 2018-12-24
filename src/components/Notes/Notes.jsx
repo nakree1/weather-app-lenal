@@ -23,7 +23,7 @@ export default class Notes extends React.Component {
   };
 
   render() {
-    const { isLoaded, data, createNote, currentDate, deleteNote, saveNote, selectNote, selected } = this.props;
+    const { isLoaded, data, createNote, currentDate, selectNote, selected } = this.props;
     if (!isLoaded) return null;
 
     const sidebarItems = data.map(item => (
