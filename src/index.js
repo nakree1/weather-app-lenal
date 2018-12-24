@@ -12,6 +12,13 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(rootSaga);
 
+store.subscribe(() => {
+  const state = store.getState();
+
+  localStorage.setItem('location', JSON.stringify(state.location.currentLocation));
+  localStorage.setItem('notes', JSON.stringify(state.notes.data));
+});
+
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>

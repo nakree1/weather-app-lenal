@@ -7,7 +7,11 @@ export default class Location extends React.Component {
   };
 
   componentDidMount() {
-    getGeolocation(this.props.fetchCurrentLocation, () => {});
+    if (!localStorage.getItem('location')) {
+      getGeolocation(this.props.fetchCurrentLocation);
+    } else {
+      this.props.selectLocation(JSON.parse(localStorage.getItem('location')));
+    }
   }
 
   componentDidUpdate(prevProps) {

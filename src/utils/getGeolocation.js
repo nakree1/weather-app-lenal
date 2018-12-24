@@ -1,4 +1,4 @@
-export default function getGeolocation(successCallback, errorCallback) {
+export default function getGeolocation(successCallback) {
   if ('geolocation' in navigator) {
     const onGeoSuccess = ({ coords }) => {
       console.log(coords);

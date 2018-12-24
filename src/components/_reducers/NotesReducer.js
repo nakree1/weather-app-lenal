@@ -6,14 +6,6 @@ import { selectCurrentDate } from '../_actions/CurrentDateActions';
 
 import getId from '../../utils/getId';
 
-const mockData = {
-  '2018-12-23': [
-    { id: getId(), title: 'Header text', text: 'some note text' },
-    { id: getId(), title: 'Second note', text: 'Some second note text' },
-  ],
-  '2018-12-25': [{ id: getId(), title: 'Lorem ipsum', text: 'Solor menum' }],
-};
-
 const isLoaded = handleActions({}, true);
 
 const selected = handleActions(
@@ -76,20 +68,8 @@ const data = handleActions(
       }
     },
   },
-  mockData
+  JSON.parse(localStorage.getItem('notes')) || {}
 );
-
-/*
-data = {
-    '2018-12-23': [
-      { title: 'Header text', text: 'some note text' },
-      { title: 'Second note', text: 'Some second note text' }
-    ],
-    '2018-12-25': [
-      { title: 'Lorem ipsum', text: 'Solor menum' }
-    ]
-}
-*/
 
 const notes = combineReducers({
   isLoaded,

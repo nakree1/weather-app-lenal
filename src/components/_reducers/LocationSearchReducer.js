@@ -48,7 +48,7 @@ const query = handleActions(
       return payload.title;
     },
   },
-  ''
+  localStorage.getItem('location') ? JSON.parse(localStorage.getItem('location')).title : ''
 );
 
 const currentLocation = handleActions(
