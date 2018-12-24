@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/weather_app_lenal/static/js/runtime~main.6fbb6155.js"
   },
   {
-    "revision": "9de83f62055b2b6294e0",
-    "url": "/weather_app_lenal/static/js/main.9de83f62.chunk.js"
+    "revision": "871b4da5660efa766782",
+    "url": "/weather_app_lenal/static/js/main.871b4da5.chunk.js"
   },
   {
     "revision": "004ab4808496f5241950",
     "url": "/weather_app_lenal/static/js/1.004ab480.chunk.js"
   },
   {
-    "revision": "9de83f62055b2b6294e0",
+    "revision": "871b4da5660efa766782",
     "url": "/weather_app_lenal/static/css/main.d105e3cd.chunk.css"
   },
   {
-    "revision": "2c0d2099cff1f7b727c6a306914dd55c",
+    "revision": "bc56b5f26014c2ce0bad874f1bd688c7",
     "url": "/weather_app_lenal/index.html"
   }
 ];
