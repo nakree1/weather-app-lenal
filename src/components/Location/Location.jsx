@@ -72,7 +72,7 @@ export default class Location extends React.Component {
 
     return (
       <div className="location">
-        <div className="location__label">Location:</div>
+        {/*<div className="location__label">Location:</div>*/}
         <div className="dropdown">
           <input
             type="text"
@@ -81,6 +81,7 @@ export default class Location extends React.Component {
             onClick={this.openDropdown}
             onKeyPress={this.selectByKey}
             value={query}
+            placeholder="Start typing..."
           />
 
           <ul className={`dropdown__list ${hints.length && showDropdown ? 'active' : ''}`}>{hints.length && list}</ul>

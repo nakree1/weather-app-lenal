@@ -1,8 +1,26 @@
 $browser-context: 16;
 
-$font-color-main: #191919;
-$theme-main-color: #1875f0;
-
-$border-color: #e0e0e0;
-
+$gutter: 1rem;
 $gap: 30px;
+$radius: 0.5rem;
+
+$main-color: #007bff;
+$main-color-muted: #146dd7;
+$main-color-muted-2: #5fb0ff;
+$main-background: #e1e1e1;
+$secondary-background: #ededed;
+
+$menu-color: #e5e2e7;
+
+$border-color: #c7c7c7;
+
+$font-color-main: #191919;
+$font-color-muted: #aeaeae;
+$font-color-colored: $main-color;
+
+$dark-gray: #c7c7cc;
+$dark-gray-2: #8e8e93;
+$light-gray: #e5e5ea;
+
+
+

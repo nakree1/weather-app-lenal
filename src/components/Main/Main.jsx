@@ -7,11 +7,8 @@ export default class Main extends React.Component {
   render() {
     return (
       <div className="content">
-        <div className="main-form">
-          <LocationContainer />
-        </div>
+        <LocationContainer />
         <ForecastContainer />
-
         <NotesContainer />
       </div>
     );

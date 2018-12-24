@@ -13,7 +13,7 @@ function* searchHintsWorker({ payload }) {
   try {
     const res = yield call(() => api.getLocationByQuery(decodeURI(payload)));
     if (res.status === 200) {
-      yield put(fetchSearchHints.success(res.data.slice(0, 4)));
+      yield put(fetchSearchHints.success(res.data.slice(0, 6)));
     } else {
       yield put(fetchSearchHints.failure());
     }

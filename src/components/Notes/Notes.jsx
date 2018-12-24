@@ -24,21 +24,22 @@ export default class Notes extends React.Component {
 
   render() {
     const { isLoaded, data, createNote, currentDate, deleteNote, saveNote, selectNote, selected } = this.props;
-
     if (!isLoaded) return null;
 
     const sidebarItems = data.map(item => (
-      <div className="notes__item" key={item.id}>
-        <span onClick={() => selectNote(item.id)}>{item.title}</span>
-        <br />
-        <span onClick={() => this.handleDelete(item.id)}>Delete</span>
+      <div className={`notes__item ${item.id === selected ? 'active' : ''}`} key={item.id}>
+        <span className="notes__item-text" onClick={() => selectNote(item.id)}>
+          {item.title}
+        </span>
+        <div className="icon_wrap" onClick={() => this.handleDelete(item.id)}>
+          <i className="fas fa-times" />
+        </div>
       </div>
     ));
 
     return (
       <div className="notes">
         <div className="notes__sidebar">
-          <div className="notes__date">{currentDate}</div>
           {sidebarItems}
           <AddNoteButton createNote={createNote} currentDate={currentDate} />
         </div>

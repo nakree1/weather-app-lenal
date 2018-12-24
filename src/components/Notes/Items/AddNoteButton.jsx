@@ -24,7 +24,7 @@ export default class AddNoteButton extends React.Component {
       <div className="notes__item notes__item-container">
         <input type="text" className="notes__item-input" ref={this.input} />
         <button className="notes__item-button" onClick={this.addNote}>
-          Add note
+          Add
         </button>
       </div>
     );

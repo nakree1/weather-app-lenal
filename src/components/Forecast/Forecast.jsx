@@ -1,5 +1,6 @@
 import React from 'react';
-import ForecastDay from './ForecastDay/ForecastDay';
+import ForecastDay from './Items/ForecastDay';
+import ForecastDetails from './Items/ForecastDetails';
 
 export default class Forecast extends React.Component {
   render() {
@@ -19,7 +20,7 @@ export default class Forecast extends React.Component {
     return (
       <div className="forecast">
         <div className="forecast__week">{weekForecast}</div>
-        {/*<div className="forecast__details">{currentDate}</div>*/}
+        <ForecastDetails currentDate={currentDate} data={data} />
       </div>
     );
   }
