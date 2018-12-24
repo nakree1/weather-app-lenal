@@ -6,11 +6,11 @@ function* countGenerator(num = 1) {
 }
 
 function getIdGenerator() {
-  const gen = countGenerator(+localStorage.getItem('counter'));
+  const gen = countGenerator(localStorage.getItem('counter') || 1);
   return function() {
     const id = gen.next().value;
     localStorage.setItem('counter', id + 1);
-    console.log('Generated new id: ' + id);
+    // console.log('Generated new id: ' + id);
     return id;
   };
 }
