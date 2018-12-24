@@ -1,12 +1,56 @@
 @media screen and (max-width: 1200px) {
-}
-@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 90%;
+  }
 }
 
 @media screen and (max-width: 991px) {
+  .container {
+    max-width: 95%;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 865px) {
+  html {
+    font-size: 14px;
+  }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 682px) {
+  .forecast__details {
+    flex-direction: column;
+  }
+  .forecast__block-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .forecast__block-state {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .notes {
+    flex-direction: column;
+    height: 50vh;
+
+    &__sidebar {
+      width: 100%;
+      max-height: 15vh;
+    }
+    &__content {
+      height: 35vh;
+      width: 100%;
+    }
+
+    &__text-input {
+      height: 35vh;
+      width: 100%;
+    }
+
+    &__text-info {
+      height: 100%;
+    }
+  }
 }

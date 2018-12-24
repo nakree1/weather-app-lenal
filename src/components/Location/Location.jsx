@@ -44,8 +44,8 @@ export default class Location extends React.Component {
         this.props.selectLocation({ id, title });
         this.props.clearHints();
       }
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.error(error);
     } finally {
       this.setState({ showDropdown: false });
       document.removeEventListener('click', this.closeDropdown);

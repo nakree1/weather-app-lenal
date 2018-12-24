@@ -11,11 +11,8 @@ export default function getGeolocation(successCallback) {
 
     const onGeoError = () => {
       console.error('Geo permission denied');
-      errorCallback();
     };
 
     navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-  } else {
-    errorCallback();
   }
 }

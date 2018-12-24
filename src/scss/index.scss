@@ -136,11 +136,13 @@ body {
   display: flex;
   justify-content: space-between;
   flex-shrink: revert;
+  overflow-x: auto;
 }
 
 .forecast__item {
   display: flex;
   flex-wrap: nowrap;
+  min-width: 122px;
   width: 100%;
   padding: $gutter;
   text-align: center;
@@ -184,11 +186,13 @@ body {
 .forecast__details {
   display: flex;
   flex-wrap: nowrap;
+  background-color: $light-gray;
 }
 .forecast__block-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-self:center;
   background-color: $light-gray;
   flex-grow: 1;
 }
@@ -211,7 +215,7 @@ body {
     align-content: center;
 
     .icon_wrap {
-      color: $dark-gray-2;
+      color: black;
       margin-left: 2rem;
       font-size: 5rem;
       height: 80px;
@@ -228,9 +232,6 @@ body {
     font-weight: 300;
   }
 }
-
-
-
 
 .notes {
   @include roundPart(false, true);
@@ -294,6 +295,7 @@ body {
     }
 
     &-input {
+      resize: none;
       border: none;
       font-size: 1.25rem;
       width: 80%;

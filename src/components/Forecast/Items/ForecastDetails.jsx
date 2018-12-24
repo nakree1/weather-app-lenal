@@ -34,8 +34,6 @@ export default class ForecastDetails extends React.Component {
             </div>
             <ForecastStateIcon state={weather.weather_state_abbr} />
           </div>
-
-          <div className="forecast__block-wind" />
         </div>
       </div>
     );

@@ -6,9 +6,10 @@ function* countGenerator(num = 1) {
 }
 
 function getIdGenerator() {
-  const gen = countGenerator();
+  const gen = countGenerator(+localStorage.getItem('counter'));
   return function() {
     const id = gen.next().value;
+    localStorage.setItem('counter', id + 1);
     console.log('Generated new id: ' + id);
     return id;
   };

@@ -17,6 +17,15 @@ const status = handleActions(
     [actions.fetchSearchHints.FULFILL]() {
       return 'none';
     },
+    [actions.fetchCurrentLocation.REQUEST]() {
+      return 'request';
+    },
+    [actions.fetchCurrentLocation.SUCCESS]() {
+      return 'success';
+    },
+    [actions.fetchCurrentLocation.FAILURE]() {
+      return 'failure';
+    },
   },
   'none'
 );

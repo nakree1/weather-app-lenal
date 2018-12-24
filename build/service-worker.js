@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/weather_app_lenal/precache-manifest.71540a14502be60780465c7505b5d8e9.js"
+  "/weather_app_lenal/precache-manifest.a8a66194cb57c543b7d3367879c0ea8b.js"
 );
 
 workbox.clientsClaim();

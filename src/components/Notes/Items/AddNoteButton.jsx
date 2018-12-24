@@ -19,10 +19,16 @@ export default class AddNoteButton extends React.Component {
     }
   };
 
+  saveByKey = e => {
+    if (e.key === 'Enter') {
+      this.addNote();
+    }
+  };
+
   render() {
     return (
       <div className="notes__item notes__item-container">
-        <input type="text" className="notes__item-input" ref={this.input} />
+        <input type="text" className="notes__item-input" ref={this.input} onKeyPress={this.saveByKey} />
         <button className="notes__item-button" onClick={this.addNote}>
           Add
         </button>
