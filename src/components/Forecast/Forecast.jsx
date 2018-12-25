@@ -20,7 +20,7 @@ export default class Forecast extends React.Component {
     ));
 
     return (
-      <div className="forecast">
+      <div className="forecast animated faster fadeIn">
         <div className="forecast__week">{weekForecast}</div>
         <ForecastDetails currentDate={currentDate} data={data} />
       </div>

@@ -94,7 +94,9 @@ export default class Location extends React.Component {
             </div>
           ) : null}
 
-          <ul className={`dropdown__list ${hints.length && showDropdown ? 'active' : ''}`}>{hints.length && list}</ul>
+          <ul className={`dropdown__list animated faster fadeIn ${hints.length && showDropdown ? 'active' : ''}`}>
+            {hints.length && list}
+          </ul>
         </div>
       </div>
     );

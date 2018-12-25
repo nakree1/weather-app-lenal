@@ -5,6 +5,12 @@ export default class EditNoteArea extends React.Component {
     isEditable: false,
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.selected !== this.props.selected) {
+      this.setState({ isEditable: false });
+    }
+  }
+
   toggleEdit = () => {
     this.setState(prevState => ({
       isEditable: !prevState.isEditable,

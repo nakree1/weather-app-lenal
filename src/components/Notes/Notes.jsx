@@ -38,7 +38,7 @@ export default class Notes extends React.Component {
     ));
 
     return (
-      <div className="notes">
+      <div className="notes animated faster fadeIn">
         <div className="notes__sidebar">
           {sidebarItems}
           <AddNoteButton createNote={createNote} currentDate={currentDate} />
