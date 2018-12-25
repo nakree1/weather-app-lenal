@@ -1,7 +1,7 @@
 {
   "main.css": "/weather_app_lenal/static/css/main.1da90891.chunk.css",
-  "main.js": "/weather_app_lenal/static/js/main.2c208ac6.chunk.js",
-  "main.js.map": "/weather_app_lenal/static/js/main.2c208ac6.chunk.js.map",
+  "main.js": "/weather_app_lenal/static/js/main.852be22b.chunk.js",
+  "main.js.map": "/weather_app_lenal/static/js/main.852be22b.chunk.js.map",
   "static/js/1.02862c6d.chunk.js": "/weather_app_lenal/static/js/1.02862c6d.chunk.js",
   "static/js/1.02862c6d.chunk.js.map": "/weather_app_lenal/static/js/1.02862c6d.chunk.js.map",
   "runtime~main.js": "/weather_app_lenal/static/js/runtime~main.6fbb6155.js",
@@ -9,6 +9,6 @@
   "static/media/SpinnerGear.svg": "/weather_app_lenal/static/media/SpinnerGear.ee33b51a.svg",
   "static/css/main.1da90891.chunk.css.map": "/weather_app_lenal/static/css/main.1da90891.chunk.css.map",
   "index.html": "/weather_app_lenal/index.html",
-  "precache-manifest.203fbbbbf392257187722f4a1685c424.js": "/weather_app_lenal/precache-manifest.203fbbbbf392257187722f4a1685c424.js",
+  "precache-manifest.a8a66194cb57c543b7d3367879c0ea8b.js": "/weather_app_lenal/precache-manifest.a8a66194cb57c543b7d3367879c0ea8b.js",
   "service-worker.js": "/weather_app_lenal/service-worker.js"
 }
